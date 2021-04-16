@@ -1,0 +1,241 @@
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+h1 {
+  font-size: 2em;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: 700;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+body,
+figure {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h2 {
+  margin: 0;
+}
+
+a {
+  color: #ffc600;
+}
+
+html {
+  font-size: 10px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+  color: #1c1c1c;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'adam.cg_proregular', sans-serif;
+  font-weight: 100;
+  margin: 0;
+}
+
+p {
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: #1c1c1c;
+  border-bottom: 2px solid #ffc600;
+}
+
+ul,
+ol {
+  margin: 0;
+  list-style-type: square;
+}
+.hl {
+  color: #ffc600;
+}
+.section__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.video-list {
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.video-list__item {
+  width: calc(25% - 2rem);
+  margin-bottom: 2rem;
+  background: #fff;
+  padding: 2rem;
+  list-style: none;
+  position: relative;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.video-list__item:hover {
+  box-shadow: 0 0 40px 40px rgba(0, 0, 0, 0.05);
+  transform: scale(1.1);
+  z-index: 2;
+}
+.video-list__item.💩💩💩 {
+  visibility: hidden;
+}
+.video-list__image {
+  height: 150px;
+}
+.video-list__image img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: calc(100% + 4rem);
+  margin-left: -2rem;
+  margin-top: -2rem;
+  height: 100%;
+}
+.video-list__number {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  top: 0;
+  left: 0;
+  line-height: 2rem;
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  text-align: center;
+  font-size: 1rem;
+}
+.video-list__title {
+  margin-bottom: 1.5rem;
+}
+.section__videos {
+  background: url('https://s3.amazonaws.com/js30-cdn/smokey-mountains-kracked.jpg')
+    center no-repeat fixed;
+  background-size: cover;
+  position: relative;
+}
+.section__videos .title {
+  display: inline-block;
+  z-index: 2;
+  margin: auto;
+  background: #fff;
+  padding: 2rem 5rem;
+  width: auto;
+  left: 50%;
+  font-size: 3rem;
+  position: relative;
+  transform: translateX(-50%);
+  margin-top: -7.5rem;
+  margin-bottom: 3rem;
+}
+.section__videos .title span {
+  margin: 0 2rem;
+}
+/*
+  Tags
+*/
+.tags {
+  list-style: none;
+  padding: 0;
+}
+.tags__item {
+  background: #ffc600;
+  text-transform: uppercase;
+  padding: 2px 4px;
+  margin-bottom: 5px;
+  display: inline-block;
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+}
+.tags__item--1 {
+  background: #4858b6;
+  color: rgba(255, 255, 255, 0.6);
+}
+.tags__item--2 {
+  background: #eb30af;
+  color: rgba(255, 255, 255, 0.6);
+}
+.tags__item--3 {
+  background: #93ff00;
+}
+.tags__item--4 {
+  background: #3ff;
+}
+.tags__item--5 {
+  background: #469ce9;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.captions {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.captions a {
+  color: #fff;
+}
+.captions p {
+  color: #fff;
+  background: #1c1c1c;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 5px 10px;
+}
+/*
+  Mobile
+*/
+@media all and (max-width: 1200px) {
+  .section__inner {
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media all and (max-width: 800px) {
+  .video-list__item {
+    width: calc(33% - 2rem);
+  }
+}
+@media all and (max-width: 600px) {
+  .video-list__item {
+    width: 100%;
+  }
+}
