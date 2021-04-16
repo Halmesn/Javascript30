@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>JS Drum Kit</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="#" />
   </head>
   <body>
     <div class="keys">
@@ -56,14 +57,31 @@
     <audio data-key="76" src="sounds/tink.wav"></audio>
 
     <script>
-      document.body.addEventListener('keydown', (e) => {
-        const pressedKey = e.code.slice(3);
-        const letterEl = Array.from(document.querySelectorAll('.key')).filter(
-          (el) => {
-            el;
-          }
+      const audios = Array.from(document.querySelectorAll('audio'));
+      const keys = Array.from(document.querySelectorAll('.key'));
+      const findKey = (e) => {
+        const pressedKey = e.key.toUpperCase();
+        const key = keys.find(
+          (key) => key.children[0].innerHTML === pressedKey
         );
-        console.log(letterEl);
+        return key;
+      };
+
+      window.addEventListener('keydown', (e) => {
+        // according to MDN, the keyCode is Deprecated. So I choose to use event.key
+        const key = findKey(e);
+        key?.classList.add('playing');
+
+        const audioId = key?.dataset.key;
+        const audio = audios.find((key) => key.dataset.key === audioId);
+        if (!audio) return;
+        // this 'audio.currentTime = 0' is something I didn't come up with on my own. Never heard this currentTime property before. So this property setting to 0 just rewinds the audio when I press one key constantly.
+        audio.currentTime = 0;
+        audio.play();
+      });
+      window.addEventListener('keyup', (e) => {
+        const key = findKey(e);
+        key?.classList.remove('playing');
       });
     </script>
   </body>
