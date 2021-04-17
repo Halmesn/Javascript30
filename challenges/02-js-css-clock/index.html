@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS + CSS Clock</title>
+  </head>
+  <body>
+    <div class="clock">
+      <div class="clock-face">
+        <div class="hand hour-hand"></div>
+        <div class="hand min-hand"></div>
+        <div class="hand second-hand"></div>
+      </div>
+    </div>
+
+    <style>
+      :root {
+        --hour-hand-rotate: 90deg;
+        --min-hand-rotate: 90deg;
+        --second-hand-rotate: 90deg;
+      }
+
+      html {
+        background: #018ded url(https://unsplash.it/1500/1000?image=881&blur=5);
+        background-size: cover;
+        font-family: 'helvetica neue';
+        text-align: center;
+        font-size: 10px;
+      }
+
+      body {
+        margin: 0;
+        font-size: 2rem;
+        display: flex;
+        flex: 1;
+        min-height: 100vh;
+        align-items: center;
+      }
+
+      .clock {
+        width: 30rem;
+        height: 30rem;
+        border: 20px solid white;
+        border-radius: 50%;
+        margin: 50px auto;
+        position: relative;
+        padding: 2rem;
+        box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef,
+          inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .clock-face {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform: translateY(
+          -3px
+        ); /* account for the height of the clock hands */
+      }
+
+      .hand {
+        width: 50%;
+        height: 6px;
+        background: black;
+        position: absolute;
+        top: 50%;
+        transform-origin: 100%;
+        transition: all 0.05s ease-in-out;
+      }
+
+      .hour-hand {
+        transform: rotate(var(--hour-hand-rotate));
+      }
+
+      .min-hand {
+        transform: rotate(var(--min-hand-rotate));
+      }
+
+      .second-hand {
+        transform: rotate(var(--second-hand-rotate));
+      }
+    </style>
+
+    <script>
+      const updateTime = () => {
+        const currentTime = new Date();
+        const hour = currentTime.getHours();
+        const minutes = currentTime.getMinutes();
+        const seconds = currentTime.getSeconds();
+        // I noticed the strange behavior when secondHand hit 0, but I didn't know why. After Wes said it's because of the transition and it could be fixed by cancel the transition property, I came up with the solution. Worked like a charm.
+        if (seconds === 0) {
+          document.querySelector('.second-hand').style.transition = 'none';
+        }
+        document.documentElement.style.setProperty(
+          '--hour-hand-rotate',
+          `${hour * 12 + 90 + (minutes / 60) * 30}deg`
+        );
+        document.documentElement.style.setProperty(
+          '--min-hand-rotate',
+          `${minutes * 6 + 90}deg`
+        );
+        document.documentElement.style.setProperty(
+          '--second-hand-rotate',
+          `${seconds * 6 + 90}deg`
+        );
+      };
+      updateTime();
+      setInterval(updateTime, 1000);
+    </script>
+  </body>
+</html>

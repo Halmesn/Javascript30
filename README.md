@@ -13,7 +13,7 @@ I create this repo to keep my solutions.
 | Day | Challenge                                           |     Took On      |
 | :-: | :-------------------------------------------------- | :--------------: |
 |  1  | [CSS Drum Kit][1]                                   | 16th April, 2021 |
-|  2  | [JS + CSS Clock][2]                                 |  19th May, 2020  |
+|  2  | [JS + CSS Clock][2]                                 | 17th April, 2021 |
 |  3  | [CSS Variables][3]                                  |  19th May, 2020  |
 |  4  | [Array Cardio 1][4]                                 |  19th May, 2020  |
 |  5  | [Flex Panel Gallery][5]                             |  20th May, 2020  |
