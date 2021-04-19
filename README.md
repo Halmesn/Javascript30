@@ -15,7 +15,7 @@ I create this repo to keep my solutions.
 |  1  | [CSS Drum Kit][1]                                   | 16th April, 2021 |
 |  2  | [JS + CSS Clock][2]                                 | 17th April, 2021 |
 |  3  | [CSS Variables][3]                                  | 18th April, 2021 |
-|  4  | [Array Cardio 1][4]                                 |  19th May, 2020  |
+|  4  | [Array Cardio 1][4]                                 | 19th April, 2021 |
 |  5  | [Flex Panel Gallery][5]                             |  20th May, 2020  |
 |  6  | [Type Ahead][6]                                     |  20th May, 2020  |
 |  7  | [Array Cardio 2][7]                                 |  21st May, 2020  |
