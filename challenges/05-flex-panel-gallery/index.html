@@ -40,8 +40,8 @@
         box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
         color: white;
         text-align: center;
-        flex: 1;
         display: flex;
+        flex: 1;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
@@ -100,6 +100,7 @@
 
       .panel.open {
         font-size: 40px;
+        flex: 5;
       }
 
       .panel.open p:first-child {
@@ -144,27 +145,20 @@
       let firstClick = true;
       const panels = document.querySelectorAll('.panel');
 
-      const animateFlexBox = (panel, e) => {
-        panelClicked = e.target.closest('.panel');
-        panels.forEach((panel) => {
-          if (panel.classList.contains('open')) return;
-          panel.classList.remove('open');
-        });
-        panelClicked.classList.toggle('open');
-        panel.style.flex = panel.classList.contains('open') ? 5 : 1;
-      };
-
       panels.forEach((panel) => {
-        panel.addEventListener('click', (e) => {
-          if (firstClick || e.target.closest('.panel') === panelClicked) {
-            animateFlexBox(panel, e);
+        panel.addEventListener('click', function (e) {
+          // I add one new feature: you can click other panel and the current open panel will be closed.
+
+          if (firstClick || this === panelClicked) {
+            panelClicked = this;
+            this.classList.toggle('open');
             firstClick = false;
           }
-          // I add this new feature: you can click other panel and the current open panel will be closed.
-          if (e.target.closest('.panel') !== panelClicked && !firstClick) {
+
+          if (this !== panelClicked && !firstClick) {
             panelClicked.classList.remove('open');
-            panelClicked.style.flex = 1;
-            animateFlexBox(panel, e);
+            panelClicked = this;
+            this.classList.toggle('open');
           }
         });
       });
