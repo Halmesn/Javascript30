@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Type Ahead 👀</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form class="search-form">
+      <input type="text" class="search" placeholder="City or State" />
+      <ul class="suggestions">
+        <li>Filter for a city</li>
+        <li>or a state</li>
+      </ul>
+    </form>
+    <script>
+      const endpoint =
+        'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+
+      const cities = [];
+
+      // vanilla js data fetch
+      fetch(endpoint)
+        .then((response) => response.json())
+        .then((data) => cities.push(...data));
+
+      const input = document.querySelector('.search');
+      const suggestions = document.querySelector('.suggestions');
+
+      const onInputChange = function () {
+        // new RegExp(value,'gi') means any string contains the "value" globally and case insensitively.
+
+        const filteredCities = cities
+          .filter(({ city, state }) => {
+            const regex = new RegExp(this.value, 'gi');
+            return city.match(regex) || state.match(regex);
+          })
+          .sort((a, b) => +b.population - +a.population);
+
+        // vanilla js list render
+        const cityList = filteredCities
+          .map(({ city, state, population }) => {
+            const regex = new RegExp(this.value, 'gi');
+            const cityName = city.replace(
+              regex,
+              `<span class="hl">${this.value}</span>`
+            );
+            const stateName = state.replace(
+              regex,
+              `<span class="hl">${this.value}</span>`
+            );
+            return `
+              <li>
+                <span class="name">${cityName}, ${stateName}</span>
+                <span class="population">${new Intl.NumberFormat().format(
+                  +population
+                )}</span>
+              </li>
+            `;
+          })
+          .join('');
+        suggestions.innerHTML = cityList;
+      };
+
+      input.addEventListener('input', onInputChange);
+    </script>
+  </body>
+</html>

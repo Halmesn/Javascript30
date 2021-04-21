@@ -17,7 +17,7 @@ I create this repo to keep my solutions.
 |  3  | [CSS Variables][3]                                  | 18th April, 2021 |
 |  4  | [Array Cardio 1][4]                                 | 19th April, 2021 |
 |  5  | [Flex Panel Gallery][5]                             | 20th April, 2021 |
-|  6  | [Type Ahead][6]                                     |  20th May, 2020  |
+|  6  | [Type Ahead][6]                                     | 21th April, 2021 |
 |  7  | [Array Cardio 2][7]                                 |  21st May, 2020  |
 |  8  | [Fun with HTML5 Canvas][8]                          |  21st May, 2020  |
 |  9  | [Dev Tools Domination][9]                           |  22nd May, 2020  |
