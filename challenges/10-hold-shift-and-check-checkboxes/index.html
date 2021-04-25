@@ -95,38 +95,27 @@
     </div>
 
     <script>
-      const checkboxes = document.querySelectorAll(
-        '.inbox input[type="checkbox"]'
-      );
-
+      // I didn't come up with this solution on my own, I tried to flag two checkboxes but failed, wes's answer uses lastChecked to flag the last checkbox so that he can use this to flag the first checked one.
       let lastChecked;
+      const checkboxes = Array.from(document.querySelectorAll('.item input'));
 
-      function handleCheck(e) {
-        // Check if they had the shift key down
-        // AND check that they are checking it
-        let inBetween = false;
-        if (e.shiftKey && this.checked) {
-          // go ahead and do what we please
-          // loop over every single checkbox
-          checkboxes.forEach((checkbox) => {
-            console.log(checkbox);
-            if (checkbox === this || checkbox === lastChecked) {
-              inBetween = !inBetween;
-              console.log('Starting to check them in between!');
-            }
-
-            if (inBetween) {
-              checkbox.checked = true;
-            }
-          });
-        }
-
-        lastChecked = this;
-      }
-
-      checkboxes.forEach((checkbox) =>
-        checkbox.addEventListener('click', handleCheck)
-      );
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener('click', function (e) {
+          // this inBetween variable opens my mind. It flags all the elements between the two clicks without knowing the index or some other harder stuff. This is genius. I will never be able to come up with this on my own. So google or tutorial is important! You can't know everything!
+          let inBetween = false;
+          if (e.shiftKey && this.checked) {
+            checkboxes.forEach((checkbox) => {
+              if (checkbox === this || checkbox === lastChecked) {
+                inBetween = !inBetween;
+              }
+              if (inBetween) {
+                checkbox.checked = true;
+              }
+            });
+          }
+          lastChecked = this;
+        });
+      });
     </script>
   </body>
 </html>
