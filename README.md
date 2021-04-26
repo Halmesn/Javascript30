@@ -22,7 +22,7 @@ I create this repo to keep my solutions.
 |  8  | [Fun with HTML5 Canvas][8]                          | 23rd April, 2021 |
 |  9  | [Dev Tools Domination][9]                           | 24th April, 2021 |
 | 10  | [Hold Shift and Check Checkboxes][10]               | 25th April, 2021 |
-| 11  | [Custom Video Player][11]                           |  22nd May, 2020  |
+| 11  | [Custom Video Player][11]                           | 26th April, 2021 |
 | 12  | [Key Sequence Detection][12]                        |  23rd May, 2020  |
 | 13  | [Slide in on Scroll][13]                            |  24th May, 2020  |
 | 14  | [Javascript Reference vs Copying][14]               |  24th May, 2020  |
