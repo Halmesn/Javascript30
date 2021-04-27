@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Key Detection</title>
+    <script
+      type="text/javascript"
+      src="https://www.cornify.com/js/cornify.js"
+    ></script>
+  </head>
+  <body style="display: grid; place-items: center; height: 95vh">
+    <h1>press 'hello' to see what happens</h1>
+    <script>
+      const pressedKey = [];
+      const secretWord = 'hello';
+      window.addEventListener('keydown', (e) => {
+        pressedKey.push(e.key);
+        const trimmedPressedKey = pressedKey.slice(
+          -secretWord.length,
+          pressedKey.length
+        );
+        if (trimmedPressedKey.join('') === secretWord) cornify_add();
+      });
+    </script>
+  </body>
+</html>
