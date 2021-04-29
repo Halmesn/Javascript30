@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Reference VS Copy</title>
+  </head>
+  <body>
+    <script>
+      // Let's say we have an array
+      const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+      // and we want to make a copy of it.
+      // So, how do we do?
+
+      // one way
+
+      // let newPlayer = [];
+      // players.forEach((player) => {
+      //   newPlayer.push(player);
+      // });
+
+      // another way
+
+      // const newPlayer = players.slice();
+
+      // or use Array from
+
+      // const newPlayer = Array.from(players);
+
+      // or create a new array and concat the old one in
+
+      // let emptyArray = [];
+      // const newPlayers = emptyArray.concat(players);
+
+      // or use the new ES6 Spread --- my favorite!!
+      const newPlayers = [...players];
+
+      // now when we update it, the original one isn't changed
+
+      // The same thing goes for objects, let's say we have a person object
+
+      // with Objects
+      const person = {
+        name: 'Wes Bos',
+        age: 80,
+      };
+
+      const person2 = {
+        name: 'Wes Bos',
+        age: 80,
+        home: {
+          address: 22,
+          level: 13,
+        },
+      };
+
+      // how do we take a copy instead?
+      const newPerson = { ...person };
+
+      // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method if you really need it.
+
+      // or you can use poor man's deep clone (it can't clone function or symbols)
+      const newPerson2 = JSON.parse(JSON.stringify(person));
+    </script>
+  </body>
+</html>
