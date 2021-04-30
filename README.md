@@ -26,7 +26,7 @@ I create this repo to keep my solutions.
 | 12  | [Key Sequence Detection][12]                        | 27th April, 2021 |
 | 13  | [Slide in on Scroll][13]                            | 28th April, 2021 |
 | 14  | [Javascript Reference vs Copying][14]               | 29th April, 2021 |
-| 15  | [Local Storage][15]                                 |  25th May, 2020  |
+| 15  | [Local Storage][15]                                 | 30th April, 2021 |
 | 16  | [Mouse Move Shadow][16]                             |  25th May, 2020  |
 | 17  | [Sort Without Articles][17]                         |  25th May, 2020  |
 | 18  | [Adding Up with Reduce][18]                         |  26th May, 2020  |
