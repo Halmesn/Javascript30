@@ -27,7 +27,7 @@ I create this repo to keep my solutions.
 | 13  | [Slide in on Scroll][13]                            | 28th April, 2021 |
 | 14  | [Javascript Reference vs Copying][14]               | 29th April, 2021 |
 | 15  | [Local Storage][15]                                 | 30th April, 2021 |
-| 16  | [Mouse Move Shadow][16]                             |  25th May, 2020  |
+| 16  | [Mouse Move Shadow][16]                             |  1st May, 2021   |
 | 17  | [Sort Without Articles][17]                         |  25th May, 2020  |
 | 18  | [Adding Up with Reduce][18]                         |  26th May, 2020  |
 | 19  | [Webcam Fun][19]                                    |  26th May, 2020  |

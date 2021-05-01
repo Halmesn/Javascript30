@@ -70,8 +70,11 @@
         const renderedItems = items
           .map(({ item, checked }, index) => {
             const checkedString = checked ? 'checked' : '';
-            return `<li><input type="checkbox" name=${item} id=${index} ${checkedString}
-               /><label for=${index}>${item}</label></li>`;
+            return `
+            <li>
+              <input type="checkbox" name=${item} id=${index} ${checkedString} />
+              <label for=${index}>${item}</label>
+            </li>`;
           })
           .join('');
         itemsList.innerHTML = renderedItems;
