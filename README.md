@@ -29,7 +29,7 @@ I create this repo to keep my solutions.
 | 15  | [Local Storage][15]                                 | 30th April, 2021 |
 | 16  | [Mouse Move Shadow][16]                             |  1st May, 2021   |
 | 17  | [Sort Without Articles][17]                         |  2nd May, 2021   |
-| 18  | [Adding Up with Reduce][18]                         |  26th May, 2020  |
+| 18  | [Adding Up with Reduce][18]                         |  3rd May, 2021   |
 | 19  | [Webcam Fun][19]                                    |  26th May, 2020  |
 | 20  | [Speech Detection][20]                              |  28th May, 2020  |
 | 21  | [Geolocation][21]                                   |  28th May, 2020  |
