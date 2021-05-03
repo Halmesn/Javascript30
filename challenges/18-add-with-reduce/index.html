@@ -67,6 +67,7 @@
     </ul>
     <script>
       const videos = Array.from(document.querySelectorAll('.videos li'));
+
       // my old answer
       // const times = videos.map((video) => video.dataset.time);
       // const minutes = times
@@ -76,7 +77,7 @@
       //   .map((time) => +time.slice(time.indexOf(':') + 1, time.length))
       //   .reduce((a, c) => a + c);
 
-      // refactor
+      // refactor in one go.
       const totalSeconds = videos
         .map((video) => video.dataset.time)
         .map((time) => {
