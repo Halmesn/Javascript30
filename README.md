@@ -31,7 +31,7 @@ I create this repo to keep my solutions.
 | 17  | [Sort Without Articles][17]                         |  2nd May, 2021   |
 | 18  | [Adding Up with Reduce][18]                         |  3rd May, 2021   |
 | 19  | [Webcam Fun][19]                                    |  4th May, 2021   |
-| 20  | [Speech Detection][20]                              |  28th May, 2020  |
+| 20  | [Speech Detection][20]                              |  5th May, 2021   |
 | 21  | [Geolocation][21]                                   |  28th May, 2020  |
 | 22  | [Follow Along Link Highlighter][22]                 |  29th May, 2020  |
 | 23  | [Speech Synthesis][23]                              |  29th May, 2020  |
