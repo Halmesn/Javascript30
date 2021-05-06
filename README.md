@@ -32,7 +32,7 @@ I create this repo to keep my solutions.
 | 18  | [Adding Up with Reduce][18]                         |  3rd May, 2021   |
 | 19  | [Webcam Fun][19]                                    |  4th May, 2021   |
 | 20  | [Speech Detection][20]                              |  5th May, 2021   |
-| 21  | [Geolocation][21]                                   |  28th May, 2020  |
+| 21  | [Geolocation][21]                                   |  6th May, 2021  |
 | 22  | [Follow Along Link Highlighter][22]                 |  29th May, 2020  |
 | 23  | [Speech Synthesis][23]                              |  29th May, 2020  |
 | 24  | [Sticky Nav][24]                                    |  29th May, 2020  |
