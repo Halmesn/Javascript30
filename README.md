@@ -35,7 +35,7 @@ I create this repo to keep my solutions.
 | 21  | [Geolocation][21]                                   |  6th May, 2021   |
 | 22  | [Follow Along Link Highlighter][22]                 |  7th May, 2021   |
 | 23  | [Speech Synthesis][23]                              |  8th May, 2021   |
-| 24  | [Sticky Nav][24]                                    |  29th May, 2020  |
+| 24  | [Sticky Nav][24]                                    |  9th May, 2021   |
 | 25  | [Event Capture, Propagation, Bubbling and Once][25] |  30th May, 2020  |
 | 26  | [Stripe Follow Along Nav][26]                       |  31st May, 2020  |
 | 27  | [Click and Drag][27]                                |  31st May, 2020  |
