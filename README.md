@@ -39,9 +39,9 @@ I create this repo to keep my solutions.
 | 25  | [Event Capture, Propagation, Bubbling and Once][25] |  10th May, 2021  |
 | 26  | [Stripe Follow Along Nav][26]                       |  11th May, 2021  |
 | 27  | [Click and Drag][27]                                |  12th May, 2021  |
-| 28  | [Video Speed Controller][28]                        |  1st June, 2020  |
-| 29  | [Countdown Timer][29]                               |  1st June, 2020  |
-| 30  | [Whack a Mole][30]                                  |  2nd June, 2020  |
+| 28  | [Video Speed Controller][28]                        |  13th May, 2021  |
+| 29  | [Countdown Timer][29]                               |  14th May, 2021  |
+| 30  | [Whack a Mole][30]                                  |  15th May, 2021  |
 
 [1]: challenges/01-js-drum-kit/
 [2]: challenges/02-js-css-clock/
