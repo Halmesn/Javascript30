@@ -1,29 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Countdown Timer</title>
-  <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="timer">
-    <div class="timer__controls">
-      <button data-time="20" class="timer__button">20 Secs</button>
-      <button data-time="300" class="timer__button">Work 5</button>
-      <button data-time="900" class="timer__button">Quick 15</button>
-      <button data-time="1200" class="timer__button">Snack 20</button>
-      <button data-time="3600" class="timer__button">Lunch Break</button>
-      <form name="customForm" id="custom">
-        <input type="text" name="minutes" placeholder="Enter Minutes">
-      </form>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Countdown Timer</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Inconsolata"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="timer">
+      <div class="timer__controls">
+        <button data-time="20" class="timer__button">20 Secs</button>
+        <button data-time="300" class="timer__button">Work 5</button>
+        <button data-time="900" class="timer__button">Quick 15</button>
+        <button data-time="1200" class="timer__button">Snack 20</button>
+        <button data-time="3600" class="timer__button">Lunch Break</button>
+        <form name="customForm" id="custom">
+          <input type="text" name="minutes" placeholder="Enter Minutes" />
+        </form>
+      </div>
+      <div class="display">
+        <h1 class="display__time-left"></h1>
+        <p class="display__end-time"></p>
+      </div>
     </div>
-    <div class="display">
-      <h1 class="display__time-left"></h1>
-      <p class="display__end-time"></p>
-    </div>
-  </div>
 
-  <script src="scripts-START.js"></script>
-</body>
+    <script>
+      const buttons = document.querySelectorAll('.timer__controls button');
+      const timerDisplay = document.querySelector('.display__time-left');
+      const endTimeDisplay = document.querySelector('.display__end-time');
+      const form = document.querySelector('#custom');
+      const formatSeconds = (seconds) =>
+        (seconds - (seconds %= 60)) / 60 + (9 < seconds ? ':' : ':0') + seconds;
+
+      const formatTimerDisplay = (seconds) => {
+        const formattedMinutes = formatSeconds(seconds);
+        timerDisplay.innerHTML = formattedMinutes;
+
+        setInterval(() => {
+          if (seconds === 0) {
+            timerDisplay.innerHTML = 'Done!';
+            return;
+          }
+          seconds -= 1;
+          const formattedMinutes = formatSeconds(seconds);
+          timerDisplay.innerHTML = formattedMinutes;
+        }, 1000);
+      };
+
+      const formatEndTimeDisplay = (seconds) => {
+        const now = new Date();
+        const endTime = new Date(now.getTime() + seconds * 1000);
+        endTimeDisplay.innerHTML = `Be back at ${
+          endTime.getHours() < 10 ? '0' : ''
+        }${endTime.getHours()}:${
+          endTime.getMinutes() < 10 ? '0' : ''
+        }${endTime.getMinutes()}`;
+      };
+
+      function startTimer(e) {
+        let counter = +this.dataset.time;
+        formatTimerDisplay(counter);
+
+        formatEndTimeDisplay(+this.dataset.time);
+      }
+
+      function customTime(e) {
+        e.preventDefault();
+        const inputValue = +document.querySelector('input').value;
+        if (isNaN(inputValue)) return;
+        let inputSeconds = inputValue * 60;
+        formatTimerDisplay(inputSeconds);
+
+        formatEndTimeDisplay(inputValue);
+      }
+      buttons.forEach((button) => button.addEventListener('click', startTimer));
+      form.addEventListener('submit', customTime);
+    </script>
+  </body>
 </html>
